@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>float: left | right</title>
+        <style>
+            .container {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                border: 2px dashed rgb(0,0,0);
+                padding: 5px;
+            }
+            .item {
+                width: 60px;
+                height: 60px;
+                color: rgb(255,255,255);
+                margin: 5px;
+                float: left;
+            }
+            .item:nth-child(1) {
+                background-color: rgb(0, 255, 0);
+                border: 2px dashed rgb(0, 255, 0);
+                height: 80px;
+                /* float: left; */
+            }
+            .item:nth-child(2) {
+                background-color: rgb(255, 0, 0);
+                border: 2px dashed rgb(255, 0, 0);                
+            }
+            .item:nth-child(3) {
+                background-color: rgb(0, 0, 255);
+                border: 2px dashed rgb(0, 0, 255);       
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">框1</div>
+            <div class="item">框2</div>
+            <div class="item">框3</div>
+        </div>
+    </body>
+</html>

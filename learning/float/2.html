@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>clear: left | right | both | none</title>
+        <style>
+            .container {
+                border: 2px dashed black;
+                padding: 5px;
+            }
+            img {
+                width: 100px;
+                height: 100px;
+                float: left;
+            }
+            .item {
+                height: 60px;
+                border: 2px dashed pink;
+                color: rgb(255,255,255);
+                margin: 5px 0;
+            }
+            .item:last-child {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="./peach-flower.jpeg" alt="" />
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>clear: left | right | both | none</title>
+        <style>
+            .container {
+                width: 200px;
+                border: 2px dashed black;
+                padding: 5px;
+            }
+            img {
+                width: 50px;
+                height: 50px;
+                float: left;
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                height: 60px; 
+                border: 2px dashed pink;
+                float: right;
+            }
+            .clear {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="./peach-flower.jpeg" alt=""/>
+            <p>some text</p>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

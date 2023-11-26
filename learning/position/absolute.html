@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>position: relative</title>
+        <style>
+            .container {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                border: 2px dashed rgb(0,0,0);
+                padding: 5px;
+                position: relative;
+            }
+            .item {
+                width: 30px;
+                height: 30px;
+                color: rgb(255,255,255);
+                margin: 5px;
+                display: inline-block;
+                border: 2px dashed black;  
+            }
+            .item:nth-child(1) {
+                background-color: rgb(0, 255, 0);
+                border: 2px dashed rgb(0, 255, 0);
+            }
+            .item:nth-child(2) {
+                background-color: rgb(255, 0, 0);
+                border: 2px dashed rgb(255, 0, 0);
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            .item:nth-child(3) {
+                background-color: rgb(0, 0, 255);
+                border: 2px dashed rgb(0, 0, 255);       
+            }
+            .item:nth-child(7) {
+                z-index: 10;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">框1</div>
+            <div class="item">框2</div>
+            <div class="item">框3</div>
+            <div class="item">框4</div>
+            <div class="item">框5</div>
+            <div class="item">框6</div>
+            <div class="item">框7</div>
+        </div>
+    </body>
+</html>
