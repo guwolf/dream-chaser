@@ -1,5 +1,5 @@
 // Base64编码表，使用k2^6=64个字符来编码
-export default dicts = [
+const dicts = [
     'A', // 0b000000 <-> A
     'B', // 0b000001 <-> B
     'C', // 0b000010 <-> C
@@ -66,3 +66,5 @@ export default dicts = [
     '/', // 0b111111 <-> /
     '=', // padding，仅作填充，无编码
 ].join('');
+
+export default dicts;

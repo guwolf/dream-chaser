@@ -1,4 +1,4 @@
-export default Unicode = {
+const Unicode = {
     UTF8Schema: [
         {
             unicodeMin: 0x000000,
@@ -143,3 +143,5 @@ export default Unicode = {
         return unicode;
     }
 }
+
+export default Unicode;
