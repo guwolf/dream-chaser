@@ -1,6 +1,8 @@
 // demo.js
-import Bson from "./bson";
- 
+import * as Bson from "./src/index";
+
+window.Bson = Bson; // 仅用于调试
+
 // Step 1. 对需要交换的json数据进行序列化
 const payload = JSON.stringify({
   code: 0,
