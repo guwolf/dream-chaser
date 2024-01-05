@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hash Router</title>
+    </head>
+    <body>
+        <a href="#/user">Go user</a>
+        <a href="#/info">Go info</a>
+        <div id="root"></div>
+        <!-- <div style="height: 1000px;"></div> -->
+        <div id="/info"></div>
+
+        <script>
+            let root = document.getElementById('root');
+            window.onhashchange = function(event) {
+                if(window.location.hash === '#/user') {
+                    root.innerHTML = `
+                        <label>
+                            用户名：
+                            <input value="小明" placeholder="user name"/>
+                        </label>
+                    `;
+                } else {
+                    root.innerHTML = `
+                        <label>
+                            年龄：13岁
+                        </label>
+                    `;
+                }
+            }
+        </script>
+    </body>
+</html>

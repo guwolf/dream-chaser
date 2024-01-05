@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hash Router</title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script>
+            let root = document.getElementById('root');
+            
+            window.onpushstate = function(state, title, url) {
+                console.dir({
+                    type: 'onpushstate', 
+                    state, 
+                    pathname: url
+                });
+                render(url);
+            }
+            // 修改history.pushState方法，将window.onpushstate事件绑入
+            bindPushstate(window.history);
+
+            function bindPushstate(history) {
+                let pushState = history.pushState;
+                history.pushState = function(state, title, url) {
+                    if(typeof window.onpushstate === 'function') {
+                        window.onpushstate(state, title, url);
+                    }
+                    return pushState.apply(history, arguments);
+                }
+            }            
+            
+            window.onpopstate = function(event) {
+                const pathname = window.location.pathname;
+                console.dir({
+                    type: event.type, 
+                    state: event.state,
+                    pathname
+                });
+                
+                render(pathname);
+            }
+
+            function render(pathname) {
+                if(pathname === '/user') {
+                    root.innerHTML = `
+                        <label>
+                            用户名：
+                            <input value="小明" placeholder="user name"/>
+                        </label>
+                    `;
+                } else if(pathname === '/info') {
+                    root.innerHTML = `
+                        <label>
+                            年龄：13岁
+                        </label>
+                    `;
+                } else {
+                    root.innerHTML = `
+                        <label>
+                            需要填写个人信息
+                        </label>
+                    `;
+                }
+            }
+
+            setTimeout(() => {
+                window.history.pushState({ page: 1 }, 'user', '/user');
+            }, 2000);
+
+            setTimeout(() => {
+                window.history.pushState({ page: 2 }, 'info', '/info');
+            }, 4000);
+
+            setTimeout(() => {
+                window.history.pushState({ page: 3 }, 'help', '/help');
+            }, 6000);
+
+        </script>
+    </body>
+</html>
